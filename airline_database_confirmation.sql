@@ -16,29 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `confirmation`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `confirmation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
+CREATE TABLE `confirmation` (
+  `pnr` varchar(255) NOT NULL,
+  `cart_id` varchar(255) NOT NULL,
+  `date_created` datetime(6) NOT NULL,
+  `is_payment_successful` bit(1) NOT NULL,
   `last_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_6dotkott2kjsp8vw4d0m25fb7` (`email`)
+  PRIMARY KEY (`pnr`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `confirmation`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `confirmation` WRITE;
+/*!40000 ALTER TABLE `confirmation` DISABLE KEYS */;
+INSERT INTO `confirmation` VALUES ('4N5D5M','VNqdCSMtI2J6gDzrellQiiXVNctHNNdHi6ArkIol2mQxgxSPV5n0MZj9QBntKbZx','2023-04-16 23:31:44.384000',_binary '','Junior'),('GX9GGF','GnBnCiqCqr1O9Z3M1OB2CdBHgHP4Z6jte5G8wG975UWTGRGu45USF6ct3s1cKHUJ','2023-04-16 23:42:56.918000',_binary '','Junior'),('JLJLPT','t2RrgiLgfB686d6AifnI32Nw3DUmCZEqOkLYy3gyqGcap6tzcP6CoZw707UfX6Kh','2023-04-17 00:49:56.270000',_binary '','Man'),('KGIMUC','ooBjMQHnokNH1OrSy4JF6XkeBeV35XETO9HKgkXb3bHcocCiOgx3bc8CdYVFSQIx','2023-04-16 21:34:52.688000',_binary '','Data'),('N81CBZ','Sw3zmag57rk4UFrVq7Dw39P5wHSdeoNOCpn1RFaOslalfN29UP2LAUMJ2QfCTtol','2023-04-17 15:16:20.400000',_binary '','Man'),('PARZRU','RsSielWkjaWAIAN8U0OYalIgbXsElYaHEemomqdh6j0A3mizcdhbTF0QJeS5HaMV','2023-04-16 21:38:53.605000',_binary '','Data');
+/*!40000 ALTER TABLE `confirmation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

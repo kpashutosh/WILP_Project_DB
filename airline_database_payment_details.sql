@@ -16,29 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `payment_details`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `payment_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_6dotkott2kjsp8vw4d0m25fb7` (`email`)
+CREATE TABLE `payment_details` (
+  `pnr` varchar(255) NOT NULL,
+  `card_type` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `card_number` varchar(255) NOT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `country` varchar(255) NOT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`pnr`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `payment_details`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `payment_details` WRITE;
+/*!40000 ALTER TABLE `payment_details` DISABLE KEYS */;
+INSERT INTO `payment_details` VALUES ('4N5D5M','Credit Card','101 Road 10','9999','Delhi','India','Delhi'),('8NMOL4','Credit Card','101 Road 10','4444','Delhi','India','Delhi'),('GX9GGF','Credit Card','101 Road 10','9999','Delhi','India','Delhi'),('JLJLPT','Credit Card','101 Road 10','9999','Delhi','India','Delhi'),('KGIMUC','Credit Card','101 Road 10','9999','Delhi','India','Delhi'),('N81CBZ','Credit Card','101 Road 10','9999','Delhi','India','Delhi'),('PARZRU','Credit Card','101 Road 10','5486','Delhi','India','Delhi');
+/*!40000 ALTER TABLE `payment_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-18 14:11:13
+-- Dump completed on 2023-04-18 14:11:12

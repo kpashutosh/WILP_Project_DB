@@ -16,29 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `cancellation`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `cancellation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_6dotkott2kjsp8vw4d0m25fb7` (`email`)
+CREATE TABLE `cancellation` (
+  `pnr` varchar(255) NOT NULL,
+  `cancellation_date` datetime(6) NOT NULL,
+  PRIMARY KEY (`pnr`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `cancellation`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `cancellation` WRITE;
+/*!40000 ALTER TABLE `cancellation` DISABLE KEYS */;
+INSERT INTO `cancellation` VALUES ('GX9GGF','2023-04-17 00:37:11.370000'),('JLJLPT','2023-04-17 00:50:31.933000'),('N81CBZ','2023-04-17 15:18:07.322000');
+/*!40000 ALTER TABLE `cancellation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-18 14:11:13
+-- Dump completed on 2023-04-18 14:11:12
